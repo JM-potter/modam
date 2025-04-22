@@ -1,14 +1,8 @@
-// modam/app/page.tsx
-import ModamMainPage from "./ModamMainPage";
-
-export default function Page() {
-  return <ModamMainPage />;
-}
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Calendar } from "../components/ui/calendar";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import Image from "next/image";
 
 const fruitKits = [
@@ -31,7 +25,7 @@ const fruitKits = [
 export default function ModamMainPage() {
   const [selectedKit, setSelectedKit] = useState(fruitKits[0]);
   const [pickupLocation, setPickupLocation] = useState("");
-  const [pickupDate, setPickupDate] = useState<Date | undefined>(undefined);
+  const [pickupDate, setPickupDate] = useState<any>(undefined);
   const [paymentDone, setPaymentDone] = useState(false);
 
   const handleDeposit = () => {
