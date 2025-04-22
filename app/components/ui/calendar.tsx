@@ -1,15 +1,17 @@
-"use client";
 import React from "react";
 
-export function Calendar({ selected, onSelect }: any) {
-  const today = new Date().toISOString().split("T")[0];
-
+export function Card({ children, className = "", ...props }: any) {
   return (
-    <input
-      type="date"
-      className="p-2 border rounded w-full"
-      value={selected ? selected.toISOString().split("T")[0] : today}
-      onChange={(e) => onSelect(new Date(e.target.value))}
-    />
+    <div className={`rounded-xl border bg-white shadow ${className}`} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function CardContent({ children, className = "", ...props }: any) {
+  return (
+    <div className={`p-4 ${className}`} {...props}>
+      {children}
+    </div>
   );
 }

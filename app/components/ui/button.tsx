@@ -1,12 +1,17 @@
 import React from "react";
 
-export function Button({ children, className = "", ...props }: any) {
+export function Card({ children, className = "", ...props }: any) {
   return (
-    <button
-      className={`px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition ${className}`}
-      {...props}
-    >
+    <div className={`rounded-xl border bg-white shadow ${className}`} {...props}>
       {children}
-    </button>
+    </div>
+  );
+}
+
+export function CardContent({ children, className = "", ...props }: any) {
+  return (
+    <div className={`p-4 ${className}`} {...props}>
+      {children}
+    </div>
   );
 }
